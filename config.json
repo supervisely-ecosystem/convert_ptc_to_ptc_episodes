@@ -1,11 +1,11 @@
 {
-    "name": "Application Name",
+    "name": "Convert point clouds project to episodes",
     "type": "app",
     "version": "2.0.0",
     "categories": [
-      ""
+      "pointclouds"
     ],
-    "description": "application description",
+    "description": "Creates sequence of connected point clouds with tracklets",
     "docker_image": "supervisely/base-py-sdk:latest",
     "entrypoint": "python -m uvicorn src.main:g.app --host 0.0.0.0 --port 8000",
     "port": 8000,
@@ -16,9 +16,9 @@
     "icon_cover": true,
 
     "headless": true,
-    "instance_version": "6.4.45",
+    "instance_version": "6.4.57",
 
     "context_menu": {
-        "target": ["images_project"]
+        "target": ["point_cloud_project"]
     }
 }
