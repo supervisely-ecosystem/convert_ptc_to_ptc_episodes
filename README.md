@@ -9,9 +9,9 @@
 </p>
 
 
-[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervise.ly/apps/supervisely-ecosystem/export-to-supervisely-format)
+[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervise.ly/apps/supervisely-ecosystem/convert_ptc_to_ptc_episodes)
 [![](https://img.shields.io/badge/slack-chat-green.svg?logo=slack)](https://supervise.ly/slack)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/supervisely-ecosystem/export-to-supervisely-format)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/supervisely-ecosystem/convert_ptc_to_ptc_episodes)
 [![views](https://app.supervise.ly/public/api/v3/ecosystem.counters?repo=supervisely-ecosystem/convert_ptc_to_ptc_episodes&counter=views&label=views)](https://supervise.ly)
 [![used by teams](https://app.supervise.ly/public/api/v3/ecosystem.counters?repo=supervisely-ecosystem/convert_ptc_to_ptc_episodes&counter=downloads&label=used%20by%20teams)](https://supervise.ly)
 [![runs](https://app.supervise.ly/public/api/v3/ecosystem.counters?repo=supervisely-ecosystem/convert_ptc_to_ptc_episodes&counter=runs&label=runs)](https://supervise.ly)
@@ -25,16 +25,12 @@ Convert point clouds project to [Point Cloud Episodes format](https://docs.super
 It is useful app If you have point clouds project and you want to apply 3D tracking tools and export project annotations with tracklets in convinient to use format.
 
 # How To Use
-**Step 1**: Add app to your team from [Ecosystem](https://ecosystem.supervise.ly/apps/convert_ptc_to_ptc_episodes) if it is not there
+**Step 1**: Add app to your team from [Ecosystem](https://ecosystem.supervise.ly/apps/convert_ptc_to_ptc_episodes)
 
-**Step 2**: Open context menu of point clouds project -> `Run App` -> `Convert point clouds project to episodes` 
+**Step 2**: Open context menu of point clouds project -> `Run App` -> `Convert point clouds project to episodes`. Click "RUN" in opened modal window.
 
-<img src="" width="600px"/>
+<img src="https://user-images.githubusercontent.com/97401023/173357403-9aa96b83-7480-4264-bdd4-e4a1238993c4.png" width="600px"/>
 
-**Step 3 (optional)**: Define application launch settings in modal window
+**Step 3**: Result project will be available to see in `Tasks` list (image below) or from `Projects` in workspace of your source point clouds project
 
-<img src="" width="600px">
-
-**Step 4**: Result project will be available to see in `Tasks` list (image below) or from `Projects` in workspace of your source point clouds project
-
-<img src="">
+<img src="https://user-images.githubusercontent.com/97401023/173357522-72e2e6ec-5642-4f6d-bf80-1221ad8babe9.png">
