@@ -12,7 +12,7 @@
     "task_location": "workspace_tasks",
     "icon_background": "#FFFFFF",
 
-    "icon": "https://imgur.com/a9u0M3Y.png",
+    "icon": "https://user-images.githubusercontent.com/97401023/173351600-2686d477-58f5-49a3-8999-20b985d0224e.png",
     "icon_cover": true,
 
     "headless": true,
@@ -20,5 +20,6 @@
 
     "context_menu": {
         "target": ["point_cloud_project"]
-    }
+    },
+    "poster": "https://user-images.githubusercontent.com/97401023/173351837-f34193dd-854d-408f-b6a2-3e864086ab6f.png"
 }
