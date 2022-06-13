@@ -26,7 +26,7 @@ It is useful app If you have point clouds project and you want to apply 3D track
 
 Supervisely has specially designed annotation tool for point cloud episodes with support of photo context, here is the example:
 
-https://user-images.githubusercontent.com/97401023/173376289-1aa962be-c396-458e-ab4a-46224893aa87.mov
+<img src="https://github.com/supervisely-ecosystem/convert_ptc_to_ptc_episodes/releases/download/v0.0.1/episode-o.gif"/>
 
 # How To Use
 **Step 1**: Add app to your team from [Ecosystem](https://ecosystem.supervise.ly/apps/convert_ptc_to_ptc_episodes)
