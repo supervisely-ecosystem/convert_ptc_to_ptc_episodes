@@ -3,7 +3,9 @@
     "type": "app",
     "version": "2.0.0",
     "categories": [
-      "pointclouds"
+      "pointclouds",
+      "data transformation",
+      "annotation transformation"
     ],
     "description": "Creates sequence of connected point clouds with tracklets",
     "docker_image": "supervisely/base-py-sdk:6.22.0",
@@ -12,7 +14,7 @@
     "task_location": "workspace_tasks",
     "icon_background": "#FFFFFF",
 
-    "icon": "https://user-images.githubusercontent.com/97401023/173351600-2686d477-58f5-49a3-8999-20b985d0224e.png",
+    "icon": "https://user-images.githubusercontent.com/97401023/173373129-0a78a14d-4477-4680-860d-b2a0afc715e9.png",
     "icon_cover": true,
 
     "headless": true,
