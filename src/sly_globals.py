@@ -3,10 +3,9 @@ from pathlib import Path
 
 from fastapi import FastAPI
 from supervisely.sly_logger import logger
-from starlette.staticfiles import StaticFiles
 
 import supervisely
-from supervisely.app.fastapi import create, Jinja2Templates
+from supervisely.app.fastapi import create
 
 app_root_directory = str(Path(__file__).parent.absolute().parents[0])
 logger.info(f"App root directory: {app_root_directory}")
