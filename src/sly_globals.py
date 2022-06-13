@@ -20,6 +20,7 @@ logger.info(f"App root directory: {app_root_directory}")
 team_id = int(os.environ['context.teamId'])
 project_id = int(os.environ['modal.state.slyProjectId'])
 workspace_id = int(os.environ['context.workspaceId'])
+task_id = int(os.environ['TASK_ID'])
 
 api = supervisely.Api.from_env()
 app = FastAPI()

@@ -80,5 +80,5 @@ for dataset in new_datasets:
                                                 KeyIdMap())
     progress.iter_done_report()
 
-# g.api.task.set_output_project(, )
+g.api.task.set_output_project(g.task_id, new_project_id, new_project_name)
 f.shutdown_app()
