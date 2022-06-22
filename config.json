@@ -1,27 +1,27 @@
 {
-    "name": "Convert point clouds project to episodes",
-    "type": "app",
-    "version": "2.0.0",
-    "categories": [
-      "pointclouds",
-      "data transformation",
-      "annotation transformation"
-    ],
-    "description": "Creates sequence of connected point clouds with tracklets",
-    "docker_image": "supervisely/base-py-sdk:6.22.0",
-    "entrypoint": "python -m uvicorn src.main:g.app --host 0.0.0.0 --port 8000",
-    "port": 8000,
-    "task_location": "workspace_tasks",
-    "icon_background": "#FFFFFF",
-
-    "icon": "https://user-images.githubusercontent.com/97401023/173373129-0a78a14d-4477-4680-860d-b2a0afc715e9.png",
-    "icon_cover": true,
-
-    "headless": true,
-    "instance_version": "6.4.57",
-
-    "context_menu": {
-        "target": ["point_cloud_project"]
-    },
-    "poster": "https://user-images.githubusercontent.com/97401023/173375076-d4c54506-765f-488c-8f3c-93d0278f4759.png"
+  "name": "Convert point clouds project to episodes",
+  "type": "app",
+  "version": "2.0.0",
+  "categories": [
+    "pointclouds",
+    "data transformation",
+    "annotation transformation",
+    "data-operations"
+  ],
+  "description": "Creates sequence of connected point clouds with tracklets",
+  "docker_image": "supervisely/base-py-sdk:6.22.0",
+  "entrypoint": "python -m uvicorn src.main:g.app --host 0.0.0.0 --port 8000",
+  "port": 8000,
+  "task_location": "workspace_tasks",
+  "icon_background": "#FFFFFF",
+  "icon": "https://user-images.githubusercontent.com/97401023/173373129-0a78a14d-4477-4680-860d-b2a0afc715e9.png",
+  "icon_cover": true,
+  "headless": true,
+  "instance_version": "6.4.57",
+  "context_menu": {
+    "target": [
+      "point_cloud_project"
+    ]
+  },
+  "poster": "https://user-images.githubusercontent.com/97401023/173375076-d4c54506-765f-488c-8f3c-93d0278f4759.png"
 }
