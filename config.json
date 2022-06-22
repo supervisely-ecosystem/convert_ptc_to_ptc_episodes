@@ -6,7 +6,7 @@
     "pointclouds",
     "data transformation",
     "annotation transformation",
-    "data-operations"
+    "data operations"
   ],
   "description": "Creates sequence of connected point clouds with tracklets",
   "docker_image": "supervisely/base-py-sdk:6.22.0",
