@@ -1,5 +1,6 @@
 <div align="center" markdown>
-<img src="https://user-images.githubusercontent.com/97401023/173375076-d4c54506-765f-488c-8f3c-93d0278f4759.png"/>
+<img src="https://user-images.githubusercontent.com/48245050/182628989-5e815ef7-81dc-47a1-8651-24a9663016db.png"/>
+
 
 # Convert point clouds project to episodes
 
