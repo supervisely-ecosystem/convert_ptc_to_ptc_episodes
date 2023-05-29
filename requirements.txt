@@ -1,1 +1,1 @@
-git+https://github.com/supervisely/supervisely@api_project_clone_advanced#egg=supervisely
+supervisely==6.72.21
