@@ -1,1 +1,2 @@
-supervisely==6.72.21
+# supervisely==6.72.21
+git+https://github.com/supervisely/supervisely/@issue_2555_fix
