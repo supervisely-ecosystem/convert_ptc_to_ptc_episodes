@@ -1,7 +1,5 @@
 {
   "name": "Convert point clouds project to episodes",
-  "type": "app",
-  "version": "2.0.0",
   "categories": [
     "pointclouds",
     "data transformation",
@@ -17,7 +15,7 @@
   "icon": "https://user-images.githubusercontent.com/97401023/173373129-0a78a14d-4477-4680-860d-b2a0afc715e9.png",
   "icon_cover": true,
   "headless": true,
-  "instance_version": "6.4.57",
+  "instance_version": "6.7.40",
   "context_menu": {
     "target": ["point_cloud_project"]
   },
