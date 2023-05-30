@@ -1,2 +1,1 @@
-# supervisely==6.72.21
 git+https://github.com/supervisely/supervisely.git@pce-object-tag-fix
