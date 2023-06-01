@@ -79,7 +79,7 @@ new_datasets = g.api.dataset.get_list(new_project_id)
 progress = sly.Progress("Uploading converted annotations", len(new_datasets))
 for dataset in new_datasets:
     frames_to_ptc_names = ds_names_to_frames[dataset.name]
-    pointclouds = g.api.pointcloud.get_list(dataset.id)
+    pointclouds = g.api.pointcloud_episode.get_list(dataset.id)
     names_to_ptcs = {ptc.name: ptc.id for ptc in pointclouds}
     frames_to_ptcs = {k: names_to_ptcs[v] for k, v in frames_to_ptc_names.items()}
 
