@@ -4,34 +4,30 @@ from pathlib import Path
 from fastapi import FastAPI
 from supervisely.sly_logger import logger
 
-import supervisely
+import supervisely as sly
 from supervisely.app.fastapi import create
 
 app_root_directory = str(Path(__file__).parent.absolute().parents[0])
 logger.info(f"App root directory: {app_root_directory}")
 
-# @TODO: for debug
 # from dotenv import load_dotenv
-# debug_env_path = os.path.join(app_root_directory, "debug.env")
-# secret_debug_env_path = os.path.join(app_root_directory, "secret_debug.env")
-# load_dotenv(debug_env_path)
-# load_dotenv(secret_debug_env_path, override=True)
+# if sly.is_development():
+#     load_dotenv("debug.env")
+#     load_dotenv(os.path.expanduser("~/supervisely.env"))
 
-team_id = int(os.environ['context.teamId'])
-project_id = int(os.environ['modal.state.slyProjectId'])
-workspace_id = int(os.environ['context.workspaceId'])
-task_id = int(os.environ['TASK_ID'])
+team_id = sly.env.team_id()
+project_id = sly.env.project_id()
+workspace_id = sly.env.workspace_id()
+task_id = sly.env.task_id()
 
-api = supervisely.Api.from_env()
+api = sly.Api.from_env()
 app = FastAPI()
 sly_app = create()
 
 project_info = api.project.get_info_by_id(project_id)
-project_meta = supervisely.ProjectMeta.from_json(api.project.get_meta(project_id))
+project_meta = sly.ProjectMeta.from_json(api.project.get_meta(project_id))
 project_datasets = api.dataset.get_list(project_id)
 
 new_project_name = f"{project_info.name}_episodes"
 
 app.mount("/sly", sly_app)
-
-
