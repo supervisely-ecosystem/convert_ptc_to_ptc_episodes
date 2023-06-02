@@ -15,6 +15,7 @@ from supervisely.pointcloud_annotation.pointcloud_object_collection import (
     PointcloudObjectCollection,
 )
 
+from supervisely.api.project_api import ProjectApi
 
 logger.info("Application has been started")
 progress = sly.Progress("Processing annotations", sum(ds.items_count for ds in g.project_datasets))
@@ -49,6 +50,7 @@ for dataset in g.project_datasets:
         frames=FrameCollection(frames),
         tags=PointcloudEpisodeTagCollection([]),
     )
+
     ds_names_to_anns[dataset.name] = annotation
 
     ptcs_to_names = {v: k for k, v in names_to_ptcs.items()}
@@ -60,20 +62,38 @@ new_project_name = sly._utils.generate_free_name(
     used_names=project_names, possible_name=g.new_project_name
 )
 
-progress = sly.Progress("Cloning point clouds", 1)
-clone_task_id = g.api.project.clone_advanced(
-    g.project_id, g.workspace_id, new_project_name, with_annotations=False
+new_project = g.api.project.create(
+    g.workspace_id,
+    new_project_name,
+    type=sly.ProjectType.POINT_CLOUD_EPISODES,
+    change_name_if_conflict=True,
 )
-g.api.task.wait(clone_task_id, g.api.task.Status("finished"))
-
-progress.iter_done_report()
-
-new_project = g.api.project.get_info_by_name(g.workspace_id, new_project_name)
 new_project_id = new_project.id
 
-g.api.project.edit_info(
-    new_project_id, new_project_name, project_type=sly.ProjectType.POINT_CLOUD_EPISODES
+# скопировать классы и теги нормально
+project_meta_update = g.project_meta.to_json()
+project_meta_update["projectType"] = sly.ProjectType.POINT_CLOUD_EPISODES.value
+g.api.project.update_meta(new_project_id, project_meta_update)
+
+
+progress = sly.Progress(
+    message=f"Converting point clouds dataset [{dataset.name}] into episode",
+    total_cnt=len(g.project_datasets),
 )
+for i, dataset in zip(range(len(g.project_datasets)), g.project_datasets):
+    dataset_name = f"episode_{i}"
+    new_dataset_info = g.api.dataset.create(new_project_id, dataset_name)
+    pcd_infos = g.api.pointcloud.get_list(dataset_id=dataset.id)
+
+    names, hashes, metas = f.prepare_info_lists(pcd_infos)
+    new_pcd_infos = g.api.pointcloud_episode.upload_hashes(
+        new_dataset_info.id, names, hashes, metas
+    )
+    prepared_images = f.prepare_related_images(pcd_infos, new_pcd_infos)
+    g.api.pointcloud_episode.add_related_images(prepared_images)
+    ds_names_to_frames[dataset_name] = ds_names_to_frames.pop(dataset.name)
+    ds_names_to_anns[dataset_name] = ds_names_to_anns.pop(dataset.name)
+    progress.iter_done_report()
 
 new_datasets = g.api.dataset.get_list(new_project_id)
 progress = sly.Progress("Uploading converted annotations", len(new_datasets))
