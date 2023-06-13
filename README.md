@@ -32,8 +32,10 @@ Supervisely has a specially designed annotation tool for point cloud episodes wi
 
 **Step 2**: Open context menu of point clouds project -> `Run App` -> `Convert point clouds project to episodes`. Click "RUN" in the opened modal window.
 
-<img src="https://user-images.githubusercontent.com/97401023/173357403-9aa96b83-7480-4264-bdd4-e4a1238993c4.png" width="600px"/>
+<img width="782" alt="2023-06-13_14-16-44" src="https://github.com/supervisely-ecosystem/convert_ptc_to_ptc_episodes/assets/57998637/a5afa061-2778-4d76-abb5-44b37db32ce0">
 
 **Step 3**: Result project will be available to see in the `Tasks` list (image below) or from `Projects` in a workspace of your source point clouds project
 
-<img src="https://user-images.githubusercontent.com/97401023/173357522-72e2e6ec-5642-4f6d-bf80-1221ad8babe9.png">
+
+<img width="782" alt="2023-06-13_14-32-03" src="https://github.com/supervisely-ecosystem/convert_ptc_to_ptc_episodes/assets/57998637/2c6b37b8-37cf-438f-9c4b-52f2079e56de">
+
