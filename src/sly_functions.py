@@ -29,6 +29,7 @@ def prepare_info_lists(pcd_infos):
 
 
 def prepare_related_images(pcd_infos, new_pcd_infos):
+    prepared_images = []
     for pcd_info in pcd_infos:
         rel_image = g.api.pointcloud.get_list_related_images(id=pcd_info.id)
         if len(rel_image) == 0:
@@ -39,7 +40,6 @@ def prepare_related_images(pcd_infos, new_pcd_infos):
             for new_pcd_info in new_pcd_infos:
                 if pcd_info.name == new_pcd_info.name:
                     related_id = new_pcd_info.id
-            prepared_images = []
             prepared_images.append(
                 {
                     ApiField.ENTITY_ID: related_id,
