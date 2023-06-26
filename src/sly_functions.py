@@ -1,5 +1,5 @@
 import supervisely as sly
-import src.sly_globals as g
+import sly_globals as g
 from supervisely.api.module_api import ApiField
 
 
