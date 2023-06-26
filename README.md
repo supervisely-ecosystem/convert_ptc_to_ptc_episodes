@@ -21,21 +21,20 @@
 
 Convert point clouds project to [Point Cloud Episodes format](https://docs.supervise.ly/data-organization/00_ann_format_navi/07_supervisely_format_pointcloud_episode). All figures (3D bounding boxes) with the same `object_id` from different point clouds will be united into tracklets.
 
-It is s useful app If you have a Point Clouds project and you want to apply 3D tracking tools and export project annotations with tracklets in a convenient-to-use format.
+It is a useful app If you have a Point Clouds project and you want to apply 3D tracking tools and export project annotations with tracklets in a convenient-to-use format.
 
 Supervisely has a specially designed annotation tool for point cloud episodes with support of photo context, here is the example:
 
-<img src="https://github.com/supervisely-ecosystem/convert_ptc_to_ptc_episodes/releases/download/v0.0.1/episode-o.gif"/>
+   <img width="782" src="https://github.com/supervisely-ecosystem/convert_ptc_to_ptc_episodes/releases/download/v0.0.1/episode-o.gif"/>
 
 # How To Use
 **Step 1**: Add app to your team from [Ecosystem](https://ecosystem.supervise.ly/apps/convert_ptc_to_ptc_episodes)
 
 **Step 2**: Open context menu of point clouds project -> `Run App` -> `Convert point clouds project to episodes`. Click "RUN" in the opened modal window.
 
-<img width="782" alt="2023-06-13_14-16-44" src="https://github.com/supervisely-ecosystem/convert_ptc_to_ptc_episodes/assets/57998637/a5afa061-2778-4d76-abb5-44b37db32ce0">
+   <img width="782" alt="2023-06-13_14-16-44" src="https://github.com/supervisely-ecosystem/convert_ptc_to_ptc_episodes/assets/57998637/a5afa061-2778-4d76-abb5-44b37db32ce0">
 
-**Step 3**: Result project will be available to see in the `Tasks` list (image below) or from `Projects` in a workspace of your source point clouds project
+**Step 3**: Result project will be available to see in the `Tasks` list (image below) or from `Projects` in the workspace of your source point clouds project
 
-
-<img width="782" alt="2023-06-13_14-32-03" src="https://github.com/supervisely-ecosystem/convert_ptc_to_ptc_episodes/assets/57998637/2c6b37b8-37cf-438f-9c4b-52f2079e56de">
+   <img width="782" alt="2023-06-13_14-32-03" src="https://github.com/supervisely-ecosystem/convert_ptc_to_ptc_episodes/assets/57998637/2c6b37b8-37cf-438f-9c4b-52f2079e56de">
 
