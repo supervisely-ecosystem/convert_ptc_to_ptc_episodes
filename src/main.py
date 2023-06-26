@@ -1,8 +1,8 @@
 import supervisely as sly
 from supervisely import logger
 
-import src.sly_functions as f
-import src.sly_globals as g
+import sly_functions as f
+import sly_globals as g
 
 from collections import OrderedDict
 
@@ -71,7 +71,6 @@ new_project = g.api.project.create(
 )
 new_project_id = new_project.id
 
-project_meta_update = g.project_meta.to_json()
 project_meta_update = g.project_meta.clone(project_type=sly.ProjectType.POINT_CLOUD_EPISODES.value)
 g.api.project.update_meta(new_project_id, project_meta_update)
 
