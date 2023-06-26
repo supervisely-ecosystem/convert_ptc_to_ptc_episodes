@@ -6,14 +6,15 @@ from supervisely.sly_logger import logger
 
 import supervisely as sly
 from supervisely.app.fastapi import create
+from dotenv import load_dotenv
 
 app_root_directory = str(Path(__file__).parent.absolute().parents[0])
 logger.info(f"App root directory: {app_root_directory}")
 
-# from dotenv import load_dotenv
-# if sly.is_development():
-#     load_dotenv("debug.env")
-#     load_dotenv(os.path.expanduser("~/supervisely.env"))
+
+if sly.is_development():
+    load_dotenv("debug.env")
+    load_dotenv(os.path.expanduser("~/supervisely.env"))
 
 team_id = sly.env.team_id()
 project_id = sly.env.project_id()
