@@ -15,10 +15,11 @@ from supervisely.pointcloud_annotation.pointcloud_object_collection import (
     PointcloudObjectCollection,
 )
 
-from supervisely.api.project_api import ProjectApi
 
 logger.info("Application has been started")
-progress = sly.Progress("Processing annotations", sum(ds.items_count for ds in g.project_datasets))
+progress = sly.tqdm_sly(
+    desc="Processing annotations", total=sum(ds.items_count for ds in g.project_datasets)
+)
 ds_names_to_anns = {}
 ds_names_to_frames = {}
 for dataset in g.project_datasets:
@@ -34,14 +35,14 @@ for dataset in g.project_datasets:
     frames = []
     key_to_objects = {}
     ptc_key_id = KeyIdMap()
-    for ptc_ind, ptc_id in enumerate(pointcloud_ids):
+    for ptc_id in pointcloud_ids:
         ann_json = g.api.pointcloud.annotation.download(ptc_id)
         ann = sly.PointcloudAnnotation.from_json(ann_json, g.project_meta, ptc_key_id)
         for ann_object in ann.objects:
             if ann_object.key() not in key_to_objects.keys():
                 key_to_objects[ann_object.key()] = ann_object
         frames.append(sly.Frame(ptcs_to_frames[ptc_id], ann.figures))
-        progress.iter_done_report()
+        progress.update(1)
 
     objects_collection = PointcloudObjectCollection(key_to_objects.values())
     annotation = sly.PointcloudEpisodeAnnotation(
@@ -75,9 +76,9 @@ project_meta_update = g.project_meta.clone(project_type=sly.ProjectType.POINT_CL
 g.api.project.update_meta(new_project_id, project_meta_update)
 
 
-progress = sly.Progress(
-    message=f"Converting point clouds dataset [{dataset.name}] into episode",
-    total_cnt=len(g.project_datasets),
+progress = sly.tqdm_sly(
+    desc=f"Converting point clouds dataset [{dataset.name}] into episode",
+    total=len(g.project_datasets),
 )
 for i, dataset in zip(range(len(g.project_datasets)), g.project_datasets):
     dataset_name = f"episode_{i}"
@@ -92,10 +93,10 @@ for i, dataset in zip(range(len(g.project_datasets)), g.project_datasets):
     g.api.pointcloud_episode.add_related_images(prepared_images)
     ds_names_to_frames[dataset_name] = ds_names_to_frames.pop(dataset.name)
     ds_names_to_anns[dataset_name] = ds_names_to_anns.pop(dataset.name)
-    progress.iter_done_report()
+    progress.update(1)
 
 new_datasets = g.api.dataset.get_list(new_project_id)
-progress = sly.Progress("Uploading converted annotations", len(new_datasets))
+progress = sly.tqdm_sly(desc="Uploading converted annotations", total=len(new_datasets))
 for dataset in new_datasets:
     frames_to_ptc_names = ds_names_to_frames[dataset.name]
     pointclouds = g.api.pointcloud_episode.get_list(dataset.id)
@@ -104,7 +105,7 @@ for dataset in new_datasets:
 
     annotation = ds_names_to_anns[dataset.name]
     g.api.pointcloud_episode.annotation.append(dataset.id, annotation, frames_to_ptcs, KeyIdMap())
-    progress.iter_done_report()
+    progress.update(1)
 
 g.api.task.set_output_project(g.task_id, new_project_id, new_project_name)
 f.shutdown_app()
