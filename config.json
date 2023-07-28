@@ -1,23 +1,25 @@
 {
-  "name": "Convert Point Clouds project to Episodes",
-  "categories": [
-    "pointclouds",
-    "data transformation",
-    "annotation transformation",
-    "data operations",
-    "modalities"
-  ],
-  "description": "Creates sequence of connected point clouds with tracklets",
-  "docker_image": "supervisely/base-py-sdk:6.72.70",
-  "main_script": "src/main.py",
-  "task_location": "workspace_tasks",
-  "icon_background": "#FFFFFF",
-  "icon": "https://user-images.githubusercontent.com/97401023/173373129-0a78a14d-4477-4680-860d-b2a0afc715e9.png",
-  "icon_cover": true,
-  "headless": true,
-  "instance_version": "6.7.40",
-  "context_menu": {
-    "target": ["point_cloud_project"]
-  },
-  "poster": "https://user-images.githubusercontent.com/106374579/183427800-8d0cd4c1-0aef-4e9e-8d81-7c27b8d3a019.png"
+    "name": "Convert Point Clouds project to Episodes",
+    "categories": [
+        "pointclouds",
+        "data transformation",
+        "annotation transformation",
+        "data operations",
+        "modalities"
+    ],
+    "description": "Creates sequence of connected point clouds with tracklets",
+    "docker_image": "supervisely/data-operations:0.0.1",
+    "main_script": "src/main.py",
+    "task_location": "workspace_tasks",
+    "icon_background": "#FFFFFF",
+    "icon": "https://user-images.githubusercontent.com/97401023/173373129-0a78a14d-4477-4680-860d-b2a0afc715e9.png",
+    "icon_cover": true,
+    "headless": true,
+    "instance_version": "6.7.40",
+    "context_menu": {
+        "target": [
+            "point_cloud_project"
+        ]
+    },
+    "poster": "https://user-images.githubusercontent.com/106374579/183427800-8d0cd4c1-0aef-4e9e-8d81-7c27b8d3a019.png"
 }
