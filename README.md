@@ -9,7 +9,7 @@
 </p>
 
 
-[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](../../../../supervisely-ecosystem/convert_ptc_to_ptc_episodes)
+[![](https://img.shields.io/badge/supervisely-ecosystem-brightgreen)](https://ecosystem.supervisely.com/apps/supervisely-ecosystem/convert_ptc_to_ptc_episodes)
 [![](https://img.shields.io/badge/slack-chat-green.svg?logo=slack)](https://supervisely.com/slack)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/supervisely-ecosystem/convert_ptc_to_ptc_episodes)
 [![views](https://app.supervisely.com/img/badges/views/supervisely-ecosystem/convert_ptc_to_ptc_episodes.png)](https://supervisely.com)
@@ -28,7 +28,7 @@ Supervisely has a specially designed annotation tool for point cloud episodes wi
    <img width="782" src="https://github.com/supervisely-ecosystem/convert_ptc_to_ptc_episodes/releases/download/v0.0.1/episode-o.gif"/>
 
 # How To Use
-**Step 1**: Add app to your team from [Ecosystem](../../../../supervisely-ecosystem/convert_ptc_to_ptc_episodes)
+**Step 1**: Add app to your team from [Ecosystem](https://ecosystem.supervisely.com/apps/convert_ptc_to_ptc_episodes)
 
 **Step 2**: Open context menu of point clouds project -> `Run App` -> `Convert point clouds project to episodes`. Click "RUN" in the opened modal window.
 
