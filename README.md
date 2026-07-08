@@ -1,7 +1,7 @@
 <div align="center" markdown>
 <img src="https://user-images.githubusercontent.com/106374579/183427800-8d0cd4c1-0aef-4e9e-8d81-7c27b8d3a019.png"/>
 
-# Convert Point Clouds project to Episodes
+# Convert Point Clouds Project to Episodes
 
 <p align="center">
   <a href="#Overview">Overview</a> •
