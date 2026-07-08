@@ -1,7 +1,8 @@
 {
-    "name": "Convert Point Clouds project to Episodes",
+    "name": "Convert Point Clouds Project to Episodes",
     "categories": [
         "pointclouds",
+        "episodes",
         "data transformation",
         "annotation transformation",
         "data operations",
