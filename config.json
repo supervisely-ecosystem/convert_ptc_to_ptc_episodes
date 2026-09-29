@@ -9,14 +9,14 @@
         "modalities"
     ],
     "description": "Creates sequence of connected point clouds with tracklets",
-    "docker_image": "supervisely/data-operations:6.73.577",
+    "docker_image": "supervisely/data-operations:6.74.34",
     "main_script": "src/main.py",
     "task_location": "workspace_tasks",
     "icon_background": "#FFFFFF",
     "icon": "https://user-images.githubusercontent.com/97401023/173373129-0a78a14d-4477-4680-860d-b2a0afc715e9.png",
     "icon_cover": true,
     "headless": true,
-    "instance_version": "6.16.19",
+    "instance_version": "6.17.22",
     "context_menu": {
         "target": [
             "point_cloud_project"
